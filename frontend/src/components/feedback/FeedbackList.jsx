@@ -20,14 +20,27 @@ export default function FeedbackList() {
     dispatch(getAllFeedback());
   }, [dispatch]);
 
-  if (loading) return <p className="text-on-surface-variant">Loading...</p>;
+  if (loading) return <p className="text-on-surface-variant">Loading feedback...</p>;
 
   return (
-    <div className="max-w-2xl mx-auto mt-10">
+    <div className="max-w-3xl mx-auto mt-8 md:mt-10">
       {/* FORM */}
       <FeedbackForm editData={editData} setEditData={setEditData} />
 
       {/* LIST */}
+      <div className="mb-4 flex items-center justify-between">
+        <h3 className="text-lg md:text-xl font-bold text-on-surface">Recent Feedback</h3>
+        <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-semibold">
+          {feedbacks?.length || 0} entries
+        </span>
+      </div>
+
+      {feedbacks?.length === 0 && (
+        <div className="glass-card p-6 rounded-3xl border border-white/60 text-on-surface-variant text-center">
+          No feedback yet. Be the first to share your thoughts.
+        </div>
+      )}
+
       {feedbacks.map((item) => (
         <div
           key={item._id}
