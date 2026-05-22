@@ -16,7 +16,6 @@ export default function AdminPage() {
   const { products = [] } = useSelector((state) => state.product);
   const { users = [] } = useSelector((state) => state.admin);
   const { feedbacks = [] } = useSelector((state) => state.feedback);
-  console.log("🚀 ~ file: page.jsx:17 ~ AdminPage ~ feedbacks:", feedbacks);
 
   useEffect(() => {
     dispatch(getAllProducts());
@@ -86,7 +85,7 @@ export default function AdminPage() {
     <div className="p-2 sm:p-3 md:p-6 space-y-4 md:space-y-6 lg:space-y-12">
       {/* HEADER */}
       <div>
-        <h1 className="text-4xl font-extrabold text-primary">
+        <h1 className="text-4xl font-extrabold text-on-surface">
           Admin Dashboard
         </h1>
         <p className="text-on-surface-variant text-sm">Manage your platform</p>
@@ -95,7 +94,7 @@ export default function AdminPage() {
       {/* ANALYTICS */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {/* TOTAL BOOKS */}
-        <div className="glass-card p-5 rounded-xl border border-outline-variant relative overflow-hidden">
+          <div className="glass-card p-5 rounded-3xl border border-white/60 relative overflow-hidden">
           <span className="absolute right-3 bottom-2 opacity-10 text-primary text-6xl">
             📚
           </span>
@@ -104,7 +103,7 @@ export default function AdminPage() {
         </div>
 
         {/* BOOKS THIS MONTH */}
-        <div className="glass-card p-5 rounded-xl border border-outline-variant relative overflow-hidden hover:scale-[1.02] transition">
+          <div className="glass-card p-5 rounded-3xl border border-white/60 relative overflow-hidden hover:scale-[1.02] transition">
           <span className="absolute right-3 bottom-2 opacity-10 text-primary text-6xl animate-pulse">
             📈
           </span>
@@ -124,7 +123,7 @@ export default function AdminPage() {
         </div>
 
         {/* TOTAL USERS */}
-        <div className="glass-card p-5 rounded-xl border border-outline-variant relative overflow-hidden">
+          <div className="glass-card p-5 rounded-3xl border border-white/60 relative overflow-hidden">
           <span className="absolute right-3 bottom-2 opacity-10 text-primary text-6xl">
             👤
           </span>
@@ -133,7 +132,7 @@ export default function AdminPage() {
         </div>
 
         {/* USERS THIS MONTH */}
-        <div className="glass-card p-5 rounded-xl border border-outline-variant relative overflow-hidden hover:scale-[1.02] transition">
+          <div className="glass-card p-5 rounded-3xl border border-white/60 relative overflow-hidden hover:scale-[1.02] transition">
           <span className="absolute right-3 bottom-2 opacity-10 text-primary text-6xl animate-pulse">
             🚀
           </span>
@@ -155,7 +154,7 @@ export default function AdminPage() {
 
       {/* 👤 USERS */}
       <section>
-        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-on-surface">
           👤 Users
         </h2>
 
@@ -175,7 +174,7 @@ export default function AdminPage() {
               return (
                 <div
                   key={u._id}
-                  className="relative glass-card p-5 rounded-xl border border-outline-variant flex flex-col md:flex-row justify-between gap-4 hover:scale-[1.01] transition"
+                  className="relative glass-card p-5 rounded-3xl border border-white/60 flex flex-col md:flex-row justify-between gap-4 hover:scale-[1.01] transition"
                 >
                   {/* BG ICON */}
                   <span className="absolute z-10 right-3 bottom-2 opacity-10 text-primary text-7xl">
@@ -184,7 +183,7 @@ export default function AdminPage() {
 
                   {/* LEFT */}
                   <div>
-                    <h3 className="text-lg font-semibold">{u.name}</h3>
+                    <h3 className="text-lg font-semibold text-on-surface">{u.name}</h3>
                     <p className="text-sm text-on-surface-variant">{u.email}</p>
 
                     <p className="text-xs text-on-surface-variant">
@@ -198,8 +197,8 @@ export default function AdminPage() {
                     <span
                       className={`px-3 py-1 text-xs rounded-full font-semibold ${
                         u.role === "seller"
-                          ? "bg-tertiary text-on-tertiary"
-                          : "bg-surface-container-high text-on-surface"
+                          ? "bg-secondary/10 text-secondary border border-secondary/15"
+                          : "bg-surface-light text-on-surface border border-border/60"
                       }`}
                     >
                       {u.role || "user"}
@@ -221,7 +220,7 @@ export default function AdminPage() {
 
       {/* 📚 BOOKS */}
       <section>
-        <h2 className="text-2xl font-bold mb-3 md:mb-6 flex items-center gap-2">
+        <h2 className="text-2xl font-bold mb-3 md:mb-6 flex items-center gap-2 text-on-surface">
           <Book className="text-primary" /> Books
         </h2>
 
@@ -233,7 +232,7 @@ export default function AdminPage() {
             return (
               <div
                 key={p._id}
-                className="relative glass-card flex flex-col md:flex-row gap-3 mdLgap-6 p-3 md:p-5 rounded-2xl border border-outline-variant hover:scale-[1.01] transition"
+                className="relative glass-card flex flex-col md:flex-row gap-3 mdLgap-6 p-3 md:p-5 rounded-3xl border border-white/60 hover:scale-[1.01] transition"
               >
                 {/* BACKGROUND ICON */}
                 <Book
@@ -242,7 +241,7 @@ export default function AdminPage() {
                 />
 
                 {/* IMAGE */}
-                <div className="relative w-full md:w-40 h-52 rounded-xl overflow-hidden">
+                <div className="relative w-full md:w-40 h-52 rounded-2xl overflow-hidden border border-white/60">
                   <Image
                     src={image}
                     alt={p.title}
@@ -253,7 +252,7 @@ export default function AdminPage() {
 
                 {/* CONTENT */}
                 <div className="flex-1 space-y-2">
-                  <h3 className="text-xl font-bold flex items-center gap-2">
+                  <h3 className="text-xl font-bold flex items-center gap-2 text-on-surface">
                     <Book size={18} /> {p.title}
                   </h3>
 
@@ -274,7 +273,7 @@ export default function AdminPage() {
                 {/* DELETE */}
                 <button
                   onClick={() => handleDeleteProduct(p._id)}
-                  className="h-fit px-4 py-2 bg-error text-on-error rounded-lg flex items-center gap-2 cursor-pointer active:scale-95 hover:opacity-80 transition"
+                  className="h-fit px-4 py-2 bg-error text-white rounded-full flex items-center gap-2 cursor-pointer active:scale-95 hover:opacity-80 transition"
                 >
                   <Trash2 size={16} /> Delete
                 </button>
@@ -286,7 +285,7 @@ export default function AdminPage() {
 
       {/* 📦 ORDERS */}
       <section>
-        <h2 className="text-2xl font-bold mb-4">Orders</h2>
+        <h2 className="text-2xl font-bold mb-4 text-on-surface">Orders</h2>
         <div className="space-y-6 mt-6">
           <OrderCard type="stack" status="completed" />
           <OrderCard type="single" status="processing" />
@@ -295,7 +294,7 @@ export default function AdminPage() {
 
       {/* 💬 FEEDBACK */}
       <section>
-        <h2 className="text-2xl font-bold mb-4">Feedback</h2>
+        <h2 className="text-2xl font-bold mb-4 text-on-surface">Feedback</h2>
 
         <div className="space-y-4">
           {feedbacks.map((f) => {
@@ -308,7 +307,7 @@ export default function AdminPage() {
             return (
               <div
                 key={f._id}
-                className="relative glass-card p-4 sm:p-5 rounded-xl border border-outline-variant flex flex-col sm:flex-row justify-between gap-4 hover:scale-[1.01] transition"
+                className="relative glass-card p-4 sm:p-5 rounded-3xl border border-white/60 flex flex-col sm:flex-row justify-between gap-4 hover:scale-[1.01] transition"
               >
                 {/* BG ICON */}
                 <span className="absolute right-3 bottom-2 opacity-10 z-10 text-primary text-6xl">
