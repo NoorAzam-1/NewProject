@@ -105,7 +105,7 @@ export default function BookDetailPage() {
 
   return (
     <div className="bg-background text-on-surface">
-      <main className="px-4 md:px-6 max-w-7xl mx-auto">
+      <main className="px-4 md:px-6 max-w-7xl mx-auto py-6 md:py-10">
         {/* HERO */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
           {/* IMAGE */}
@@ -115,7 +115,7 @@ export default function BookDetailPage() {
                 src={book.images?.[0]?.url || "/placeholder-book.png"}
                 alt={book.title}
                 fill
-                className="object-cover rounded-lg shadow-2xl -rotate-2 hover:rotate-0 hover:scale-105 transition duration-300"
+                className="object-cover rounded-3xl shadow-2xl shadow-black/10 -rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 border border-white/80"
               />
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function BookDetailPage() {
               {book.category?.map((cat) => (
                 <span
                   key={cat}
-                  className="px-3 py-1 mr-2 text-xs bg-surface-variant text-primary rounded-full"
+                  className="px-3 py-1 mr-2 text-xs bg-primary/10 text-primary rounded-full border border-primary/15"
                 >
                   {cat}
                 </span>
@@ -143,12 +143,12 @@ export default function BookDetailPage() {
 
               <div className="flex items-center gap-3 mt-2">
                 <RatingStars rating={displayRating} />
-                <span>{displayRating}</span>
+                <span className="text-on-surface-variant">{displayRating}</span>
               </div>
             </div>
 
             {/* PRICE */}
-            <div className="p-6 rounded-xl bg-surface-container-low border">
+            <div className="glass-card p-6 rounded-3xl border border-white/60">
               <div className="flex items-center gap-2">
                 <div className="flex items-center justify-center gap-3">
                   {/* Real Price */}
@@ -157,12 +157,12 @@ export default function BookDetailPage() {
                   </div>
 
                   {/* Fake Price */}
-                  <span className="text-lg line-through text-gray-400">
+                  <span className="text-lg line-through text-on-surface-variant">
                     ₹{fakePrice}
                   </span>
 
                   {/* Discount Badge */}
-                  <span className="text-sm text-green-600 font-semibold">
+                  <span className="text-sm text-emerald-600 font-semibold bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/15">
                     {increasePercent}% OFF
                   </span>
                 </div>
@@ -171,7 +171,7 @@ export default function BookDetailPage() {
               <div className="flex gap-3 mt-4">
                 <button
                   onClick={handleBuyNow}
-                  className="flex-1 bg-primary text-on-primary text-center py-3 rounded-lg hover:bg-primary-hover hover:scale-105 transition cursor-pointer"
+                  className="btn btn-primary flex-1 text-center py-3 rounded-2xl hover:scale-105 transition cursor-pointer"
                 >
                   Buy Now
                 </button>
@@ -180,22 +180,22 @@ export default function BookDetailPage() {
 
             {/* DETAILS */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-              <div className="p-3 bg-surface-container rounded-lg">
+              <div className="p-3 glass-card rounded-2xl border border-white/60">
                 <span className="text-primary">Format</span>
                 <p>{book.format}</p>
               </div>
 
-              <div className="p-3 bg-surface-container rounded-lg">
+              <div className="p-3 glass-card rounded-2xl border border-white/60">
                 <span className="text-primary">Language</span>
                 <p>{book.language || "English"}</p>
               </div>
 
-              <div className="p-3 bg-surface-container rounded-lg">
+              <div className="p-3 glass-card rounded-2xl border border-white/60">
                 <span className="text-primary">Pages</span>
                 <p>{book.pages || 300}</p>
               </div>
 
-              <div className="p-3 bg-surface-container rounded-lg">
+              <div className="p-3 glass-card rounded-2xl border border-white/60">
                 <span className="text-primary">Release</span>
                 <p>
                   {book.createdAt
@@ -209,8 +209,8 @@ export default function BookDetailPage() {
 
         <div className="flex flex-col gap-4 sm:flex-row  md:gap-4 py-4 md:py-6">
           {/* ABOUT */}
-          <section className="p-6 rounded-xl bg-surface-container">
-            <h2 className="text-2xl font-bold text-primary mb-4">
+          <section className="p-6 rounded-3xl glass-card border border-white/60">
+            <h2 className="text-2xl font-bold text-on-surface mb-4">
               About the Book
             </h2>
             <p className="text-on-surface-variant">
@@ -219,18 +219,18 @@ export default function BookDetailPage() {
           </section>
 
           {/* AUTHOR SPOTLIGHT */}
-          <section className="p-6 rounded-xl bg-surface-container">
-            <h2 className="text-2xl font-bold text-primary mb-4">
+          <section className="p-6 rounded-3xl glass-card border border-white/60">
+            <h2 className="text-2xl font-bold text-on-surface mb-4">
               Author Spotlight
             </h2>
 
             <div className="flex items-center justify-center gap-4">
-              <div className="min-w-8 min-h-8 w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center text-xl font-bold">
+              <div className="min-w-8 min-h-8 w-16 h-16 rounded-full bg-gradient-futuristic flex items-center justify-center text-xl font-bold text-white shadow-lg shadow-primary/20">
                 {book.author?.charAt(0) || "A"}
               </div>
 
               <div>
-                <h3 className="font-semibold text-lg">
+                <h3 className="font-semibold text-lg text-on-surface">
                   {book.author || "Unknown Author"}
                 </h3>
 
