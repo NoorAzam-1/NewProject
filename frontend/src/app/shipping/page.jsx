@@ -5,7 +5,7 @@ import FAQSections from "@/components/shipping/FAQSections";
 
 export default function Page() {
   return (
-    <main className="bg-surface text-white min-h-screen">
+    <main className="bg-background text-on-surface min-h-screen">
       <HeroSection />
       <ProcessSection />
       <AccessSection />
