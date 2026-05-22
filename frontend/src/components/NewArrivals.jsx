@@ -32,7 +32,7 @@ export default function NewArrivals() {
       <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
         {site.arrivals.map((book) => (
           <Link href="/browse" key={book.title} className="group">
-            <div className="relative mb-4 aspect-3/4 overflow-hidden rounded-2xl border border-white/8 bg-surface shadow-2xl shadow-black/30">
+            <div className="relative mb-4 aspect-3/4 overflow-hidden rounded-2xl border border-white/60 bg-surface shadow-2xl shadow-black/10">
               <Image
                 src={book.image}
                 alt={book.title}
