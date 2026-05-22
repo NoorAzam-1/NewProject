@@ -53,6 +53,12 @@ export default function Header() {
     { name: "Library", href: "/library", icon: Library },
   ];
 
+  const isActiveLink = (href) => {
+    if (href === "/") return pathname === "/";
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   if (
     pathname === "/login" ||
     pathname === "/register" ||
@@ -63,10 +69,9 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 mb-10 w-full border-b border-border/70 bg-white/85 backdrop-blur-xl transition-shadow shadow-sm">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 md:px-6 py-4">
-          {/* LEFT */}
-          <div className="flex items-center gap-2 md:gap-4">
+      <header className="sticky top-0 z-50 mb-4 md:mb-6 w-full border-b border-border/70 bg-white/85 backdrop-blur-xl transition-shadow shadow-sm">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-2 md:px-6 py-4">
+          <div className="flex items-center gap-1 md:gap-4">
             <button
               onClick={() => setOpen(true)}
               className="md:hidden btn-ghost p-2 flex items-center justify-center"
@@ -99,7 +104,11 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="transition text-on-surface hover:text-primary"
+                className={`rounded-full px-4 py-2 transition ${
+                  isActiveLink(link.href)
+                    ? "bg-primary/10 text-primary font-semibold"
+                    : "text-on-surface hover:bg-slate-100 hover:text-primary"
+                }`}
               >
                 {link.name}
               </Link>
@@ -108,7 +117,6 @@ export default function Header() {
 
           {/* RIGHT */}
           <div className="flex items-center gap-4 relative">
-            {/* PROFILE / LOGIN */}
             {isLoggedIn ? (
               <div
                 className="relative"
@@ -172,14 +180,14 @@ export default function Header() {
                 )}
               </div>
             ) : (
-              <div className="hidden md:flex items-center gap-3">
+              <div className="flex items-center gap-2 md:gap-3">
                 <Link
                   href="/login"
                   className="text-sm font-semibold hover:text-primary"
                 >
                   Login
                 </Link>
-                <Link href="/register" className="btn btn-primary">
+                <Link href="/register" className="btn btn-primary px-4 py-2 rounded-2xl">
                   Get Started
                 </Link>
               </div>
@@ -222,7 +230,11 @@ export default function Header() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-100 transition"
+                className={`flex items-center gap-3 p-3 rounded-xl transition ${
+                  isActiveLink(link.href)
+                    ? "bg-primary/10 text-primary font-semibold"
+                    : "hover:bg-slate-100"
+                }`}
               >
                 <Icon size={18} />
                 <span className="text-sm font-medium">{link.name}</span>
