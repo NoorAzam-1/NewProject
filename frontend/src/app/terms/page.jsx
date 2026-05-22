@@ -36,7 +36,7 @@ export default function TermsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10 md:mb-20">
           
           {/* Card 1 */}
-          <div className="glass-card p-6 rounded-3xl border border-white/8 hover:border-primary/40 transition">
+          <div className="glass-card p-6 rounded-3xl border border-white/60 hover:border-primary/40 transition">
             <UserCheck size={36} className="text-primary mb-4" />
             <h3 className="font-bold mb-1">Membership</h3>
             <p className="text-sm text-on-surface-variant">
@@ -45,7 +45,7 @@ export default function TermsPage() {
           </div>
 
           {/* Card 2 */}
-          <div className="glass-card p-6 rounded-3xl border border-white/8 hover:border-primary/40 transition">
+          <div className="glass-card p-6 rounded-3xl border border-white/60 hover:border-primary/40 transition">
             <ShoppingCart size={36} className="text-primary mb-4" />
             <h3 className="font-bold mb-1">Purchases</h3>
             <p className="text-sm text-on-surface-variant">
@@ -54,7 +54,7 @@ export default function TermsPage() {
           </div>
 
           {/* Card 3 */}
-          <div className="glass-card p-6 rounded-3xl border border-white/8 hover:border-primary/40 transition">
+          <div className="glass-card p-6 rounded-3xl border border-white/60 hover:border-primary/40 transition">
             <Copyright size={36} className="text-primary mb-4" />
             <h3 className="font-bold mb-1">Intellectual Property</h3>
             <p className="text-sm text-on-surface-variant">
@@ -150,7 +150,7 @@ export default function TermsPage() {
               All content is protected by copyright laws and intellectual property rights.
             </p>
 
-            <div className="glass-card p-6 rounded-3xl border border-white/8">
+            <div className="glass-card p-6 rounded-3xl border border-white/60">
               <h4 className="font-semibold mb-3">Prohibited Actions</h4>
 
               <ul className="space-y-2 text-xs text-on-surface-variant">
