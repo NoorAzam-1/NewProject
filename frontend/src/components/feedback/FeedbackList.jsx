@@ -20,7 +20,7 @@ export default function FeedbackList() {
     dispatch(getAllFeedback());
   }, [dispatch]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="text-on-surface-variant">Loading...</p>;
 
   return (
     <div className="max-w-2xl mx-auto mt-10">
@@ -31,24 +31,24 @@ export default function FeedbackList() {
       {feedbacks.map((item) => (
         <div
           key={item._id}
-          className="border p-4 mb-3 rounded shadow"
+          className="glass-card p-4 mb-3 rounded-3xl border border-white/60 shadow-sm"
         >
-          <p><b>Name:</b> {item.name}</p>
-          <p><b>Email:</b> {item.email}</p>
-          <p><b>Contact:</b> {item.contactNo}</p>
-          <p><b>Feedback:</b> {item.feedback}</p>
+          <p><b className="text-on-surface">Name:</b> {item.name}</p>
+          <p><b className="text-on-surface">Email:</b> {item.email}</p>
+          <p><b className="text-on-surface">Contact:</b> {item.contactNo}</p>
+          <p><b className="text-on-surface">Feedback:</b> {item.feedback}</p>
 
           <div className="mt-2 flex gap-2">
             <button
               onClick={() => setEditData(item)}
-              className="bg-yellow-400 px-3 py-1 rounded"
+              className="btn btn-ghost px-3 py-1 rounded-full"
             >
               Edit
             </button>
 
             <button
               onClick={() => dispatch(deleteFeedback(item._id))}
-              className="bg-red-500 text-white px-3 py-1 rounded"
+              className="px-3 py-1 rounded-full bg-red-500/10 text-red-500 border border-red-500/20"
             >
               Delete
             </button>
