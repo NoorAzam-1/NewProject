@@ -92,7 +92,7 @@ export default function AdminPage() {
       </div>
 
       {/* ANALYTICS */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* TOTAL BOOKS */}
           <div className="glass-card p-5 rounded-3xl border border-white/60 relative overflow-hidden">
           <span className="absolute right-3 bottom-2 opacity-10 text-primary text-6xl">
