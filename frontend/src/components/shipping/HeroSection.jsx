@@ -3,16 +3,17 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <section className="mb-4 md:mb-10">
-      <div className="relative overflow-hidden rounded-xl bg-surface-container-low p-6 md:p-16 border border-white/5">
+      <div className="relative overflow-hidden rounded-3xl glass-card p-6 md:p-16 border border-white/8 shadow-2xl shadow-black/20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.14),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.1),transparent_28%)]" />
         {/* LEFT CONTENT */}
         <div className="relative z-10 max-w-2xl">
-          <span className="text-primary text-sm md:text-md font-bold tracking-[0.3rem] uppercase mb-4 block">
+          <span className="text-secondary text-sm md:text-md font-bold tracking-[0.3rem] uppercase mb-4 block">
             Frictionless Access
           </span>
 
           <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Zero Wait. <br />
-            <span className="text-primary">Instant Delivery.</span>
+            <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Instant Delivery.</span>
           </h2>
 
           <p className="text-on-surface-variant text-lg mb-8 max-w-xl">
@@ -22,11 +23,11 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <button className="flex items-center gap-2 bg-surface-container-high text-primary px-5 py-3 rounded-xl">
+            <button className="btn btn-primary flex items-center gap-2 px-5 py-3">
               ⚡ Instant Download
             </button>
 
-            <button className="flex items-center gap-2 bg-surface-container-high text-primary px-5 py-3 rounded-xl">
+            <button className="btn btn-ghost flex items-center gap-2 px-5 py-3">
               ☁️ Cloud Sync
             </button>
           </div>
