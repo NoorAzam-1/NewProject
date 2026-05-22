@@ -58,7 +58,7 @@ export default function LoginPage() {
         </div>
 
         {/* CARD */}
-        <div className="bg-surface-container/80 backdrop-blur-xl p-4 md:p-6 rounded-xl border border-outline-variant/20">
+        <div className="glass-card p-4 md:p-6 rounded-3xl border border-white/8 shadow-2xl shadow-black/20">
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* EMAIL */}
             <InputField
@@ -95,7 +95,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-linear-to-r from-primary to-primary-container text-black font-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition cursor-pointer"
+              className="w-full btn btn-primary flex items-center justify-center gap-2 disabled:opacity-60"
             >
               {loading ? "Signing in..." : "Sign In"} <ArrowRight size={18} />
             </button>
@@ -117,7 +117,7 @@ export default function LoginPage() {
 function InputField({ icon, label, ...props }) {
   return (
     <div className="space-y-2">
-      <label className="text-[11px] uppercase tracking-widest text-primary font-bold ml-1">
+          <label className="text-[11px] uppercase tracking-widest text-secondary font-bold ml-1">
         {label}
       </label>
 
@@ -128,7 +128,7 @@ function InputField({ icon, label, ...props }) {
 
         <input
           {...props}
-          className="w-full bg-surface-container-lowest border-b-2 border-outline-variant/30 focus:border-primary outline-none pl-10 pr-3 py-3 text-sm rounded-t-md placeholder:text-on-surface-variant/40"
+          className="input"
         />
       </div>
     </div>
