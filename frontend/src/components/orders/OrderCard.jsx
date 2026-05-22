@@ -3,7 +3,7 @@ import OrderStackImage from "./OrderStackImage";
 
 export default function OrderCard({ type, status }) {
   return (
-    <div className="rounded-3xl border border-white/8 glass-card p-4 sm:p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 shadow-2xl shadow-black/20">
+    <div className="rounded-3xl border border-white/60 glass-card p-4 sm:p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 shadow-2xl shadow-black/10">
 
       {/* Image */}
       <div className="w-full md:w-auto flex justify-center md:justify-start">
