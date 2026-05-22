@@ -21,7 +21,7 @@ export default function TermsPage() {
           </h1>
 
           <p className="text-on-surface-variant text-sm sm:text-base max-w-2xl leading-relaxed">
-            Welcome to E_Book_Store. These terms govern your use of our digital
+            Welcome to BrainHub. These terms govern your use of our digital
             gallery and purchase of curated literature. Please read them carefully.
           </p>
 
@@ -77,7 +77,7 @@ export default function TermsPage() {
             </h2>
 
             <p className="text-sm text-on-surface-variant mb-6 leading-relaxed">
-              By accessing E_Book_Store, you represent that you are at least 18
+              By accessing BrainHub, you represent that you are at least 18
               years of age or possess legal parental consent. To access certain
               features, you must register for an account.
             </p>
