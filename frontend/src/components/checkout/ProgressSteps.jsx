@@ -9,7 +9,7 @@ export default function ProgressSteps({ step }) {
             className={`w-8 h-8 mx-auto rounded-full flex items-center justify-center text-xs font-bold ${
               step > i
                 ? "bg-primary text-on-primary"
-                : "border border-outline-variant"
+                : "border border-border/50 bg-surface"
             }`}
           >
             {i + 1}
