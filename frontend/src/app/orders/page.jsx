@@ -3,7 +3,7 @@ import SearchFilter from "@/components/orders/SearchFilter";
 
 export default function OrdersPage() {
   return (
-    <main className="w-full max-w-4xl mx-auto bg-surface text-on-surface">
+    <main className="w-full max-w-4xl mx-auto bg-surface text-on-surface px-4 sm:px-6 lg:px-0">
       {/* Header */}
       <section className="mb-12">
         <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-4">
