@@ -17,20 +17,22 @@ const manrope = Manrope({
 
 export const metadata = {
   title: "BrainHub",
-  description: "Modern e-book store UI",
+  description: "BrainHub - AI-powered learning platform and modern EdTech SaaS",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark bg-background">
       <body
-        className={`${inter.variable} ${manrope.variable} bg-background text-on-surface`}
+        className={`${inter.variable} ${manrope.variable} bg-background text-on-surface antialiased`}
       >
         <Providers>
           <AuthGuard>
             <Header />
-            <main className="mt-18 sm:mt-19 md:mt-20 lg:mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-              {children}
+            <main className="relative z-10 mx-auto mt-6 mb-16 w-full max-w-7xl px-4 sm:mt-8 sm:px-6 lg:mt-10 lg:px-10">
+              <div className="space-y-8 md:space-y-12">
+                {children}
+              </div>
             </main>
             <Footer />
           </AuthGuard>
