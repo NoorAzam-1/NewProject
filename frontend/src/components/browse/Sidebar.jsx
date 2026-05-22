@@ -33,12 +33,12 @@ export default function Sidebar({
       {open && (
         <div
           onClick={() => setOpen(false)}
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-40 md:hidden"
         />
       )}
 
       <aside
-        className={`w-72 sm:w-80 md:w-72 lg:w-80 p-4 sm:p-5 space-y-6 glass-card z-40
+        className={`w-[min(84vw,20rem)] sm:w-80 md:w-72 lg:w-80 p-4 sm:p-5 space-y-6 glass-card z-40
         fixed top-0 left-0 h-full overflow-y-auto transform transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:sticky md:top-24 md:h-fit`}>
         {/* CLOSE BUTTON */}
         <button onClick={() => setOpen(false)} className="md:hidden text-primary">
