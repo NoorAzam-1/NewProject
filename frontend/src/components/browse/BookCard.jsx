@@ -105,7 +105,7 @@ export default function BookCard({ book }) {
     <article className="group relative flex flex-col">
       <Link
         href={`/browse/books/${_id}`}
-        className="relative aspect-3/4 overflow-hidden rounded-md bg-surface-container-low shadow-2xl transition group-hover:-translate-y-4"
+        className="relative aspect-3/4 overflow-hidden rounded-2xl bg-surface shadow-2xl shadow-black/30 transition duration-300 group-hover:-translate-y-2 border border-white/8"
       >
         <Image
           src={coverImage}
@@ -116,26 +116,26 @@ export default function BookCard({ book }) {
         />
 
         {bestseller && (
-          <span className="absolute top-1 left-1 bg-primary text-black text-[10px] px-3 py-1 rounded-full">
+          <span className="absolute top-3 left-3 bg-primary text-white text-[10px] px-3 py-1 rounded-full shadow-lg shadow-primary/20">
             Bestseller
           </span>
         )}
 
-        <span className="absolute top-1 right-1 bg-white/80 text-black text-[10px] px-2 py-1 rounded-full">
+        <span className="absolute top-3 right-3 bg-black/50 text-white text-[10px] px-2 py-1 rounded-full backdrop-blur-md border border-white/10">
           {format}
         </span>
       </Link>
 
       <div className="mt-4">
-        <h3 className="text-lg">{title}</h3>
-        <p className="text-sm text-gray-500">{author}</p>
+        <h3 className="text-lg font-semibold text-on-surface transition group-hover:text-primary">{title}</h3>
+        <p className="text-sm text-on-surface-variant">{author}</p>
 
         <div className="flex gap-3 mt-2 items-center">
-          <p className="font-bold">₹{price}</p>
+          <p className="font-bold text-secondary">₹{price}</p>
 
           <div className="flex items-center gap-1 text-sm">
             {renderStars(displayRating)}
-            <span className="text-gray-500">({displayRating})</span>
+            <span className="text-on-surface-variant">({displayRating})</span>
           </div>
         </div>
       </div>
@@ -145,16 +145,16 @@ export default function BookCard({ book }) {
           <button
             onClick={handleCart}
             disabled={loadingId === _id}
-            className="flex-1 py-2 text-[12px] sm:text-sm font-semibold rounded-lg bg-primary text-black  cursor-pointer"
+            className="btn btn-primary flex-1 py-2 text-[12px] sm:text-sm cursor-pointer"
           >
             {loadingId === _id ? "Adding..." : "Add to Cart"}
           </button>
 
           <button
             onClick={handleWishlist}
-            className={`w-10 h-10 text-xl rounded-full  cursor-pointer ${
+            className={`w-10 h-10 text-xl rounded-full glass-card cursor-pointer ${
               animate ? "scale-125" : ""
-            } ${isInWishlist ? "bg-red-100" : "bg-gray-100"}`}
+            } ${isInWishlist ? "text-pink-400" : "text-on-surface-variant"}`}
           >
             {isInWishlist ? "❤️" : "🤍"}
           </button>
