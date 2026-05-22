@@ -79,7 +79,7 @@ export default function RegisterPage() {
         </div>
 
         {/* CARD */}
-        <div className="bg-surface-container/80 backdrop-blur-xl p-4 md:p-6 rounded-xl border border-outline-variant/20">
+        <div className="glass-card p-4 md:p-6 rounded-3xl border border-white/8 shadow-2xl shadow-black/20">
           <form onSubmit={handleSubmit} className="space-y-2 md:space-y-3">
             {/* FULL NAME */}
             <InputField
@@ -121,7 +121,7 @@ export default function RegisterPage() {
 
             {/* Seller */}
             <div className="space-y-1">
-              <label className="text-[11px] uppercase tracking-widest text-primary font-bold ml-1">
+              <label className="text-[11px] uppercase tracking-widest text-secondary font-bold ml-1">
                 Role
               </label>
 
@@ -130,7 +130,7 @@ export default function RegisterPage() {
                   name="role"
                   value={form.role}
                   onChange={handleChange}
-                  className="w-full bg-surface-container-lowest border-b-2 border-outline-variant/30 focus:border-primary outline-none pl-3 pr-3 py-3 text-sm rounded-t-md text-on-surface"
+                  className="input-no-icon text-on-surface"
                 >
                   <option value="user">User</option>
                   <option value="seller">Seller</option>
@@ -179,7 +179,7 @@ export default function RegisterPage() {
             {/* BUTTON */}
             <button
               type="submit"
-              className="w-full bg-linear-to-r from-primary to-primary-container text-black font-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition cursor-pointer"
+              className="btn btn-primary w-full py-3 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition cursor-pointer"
             >
               Create Account <ArrowRight size={18} />
             </button>
@@ -204,7 +204,7 @@ export default function RegisterPage() {
 function InputField({ icon, label, ...props }) {
   return (
     <div className="space-y-1">
-      <label className="text-[11px] uppercase tracking-widest text-primary font-bold ml-1">
+      <label className="text-[11px] uppercase tracking-widest text-secondary font-bold ml-1">
         {label}
       </label>
 
@@ -213,10 +213,7 @@ function InputField({ icon, label, ...props }) {
           {icon}
         </span>
 
-        <input
-          {...props}
-          className="w-full bg-surface-container-lowest border-b-2 border-outline-variant/30 focus:border-primary outline-none pl-10 pr-3 py-3 text-sm rounded-t-md placeholder:text-on-surface-variant/40"
-        />
+        <input {...props} className="input" />
       </div>
     </div>
   );
