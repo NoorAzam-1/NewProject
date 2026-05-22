@@ -72,7 +72,7 @@ export default function CheckoutPage() {
   };
 
   return (
-    <main className="max-w-4xl mx-auto bg-surface text-on-surface rounded-3xl overflow-hidden border border-white/8 shadow-2xl shadow-black/20">
+    <main className="max-w-4xl mx-auto bg-surface text-on-surface rounded-3xl overflow-hidden border border-white/60 shadow-2xl shadow-black/10">
       <ProgressSteps step={step} />
 
       {step === 1 && <OrderSummary />}
@@ -89,7 +89,7 @@ export default function CheckoutPage() {
 
       {/* BUTTON */}
       {step < 4 && (
-        <div className="sticky bottom-0 p-5 bg-surface/90 backdrop-blur-xl border-t border-white/8">
+        <div className="sticky bottom-0 p-5 bg-surface/90 backdrop-blur-xl border-t border-white/60">
           <button
             onClick={step === 3 ? handleCheckout : nextStep}
             className="btn btn-primary w-full py-4 font-bold cursor-pointer active:scale-95 transition"
