@@ -34,7 +34,7 @@ export default function OrderSummary() {
           return (
             <div
               key={productId}
-              className="glass-card p-6 rounded-3xl space-y-4 border border-white/8"
+              className="glass-card p-6 rounded-3xl space-y-4 border border-white/60"
             >
               <div className="flex gap-4">
                 <Image
@@ -42,7 +42,7 @@ export default function OrderSummary() {
                   src={image || "/fallback.png"}
                   height={500}
                   width={300}
-                  className="w-20 h-28 object-cover rounded-2xl border border-white/10"
+                  className="w-20 h-28 object-cover rounded-2xl border border-white/60"
                 />
 
                 <div className="flex-1">
@@ -62,7 +62,7 @@ export default function OrderSummary() {
         })}
 
         {/* TOTAL SECTION */}
-        <div className="border-t border-outline-variant pt-4 space-y-2">
+        <div className="border-t border-border/40 pt-4 space-y-2">
           <div className="flex justify-between text-on-surface-variant">
             <span>Subtotal</span>
             <span className="text-on-surface">₹{subtotal.toFixed(2)}</span>
