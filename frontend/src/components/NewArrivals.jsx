@@ -24,25 +24,28 @@ function RatingStars({ rating }) {
 export default function NewArrivals() {
   return (
     <section className="mx-auto my-5 md:my-8 px-3">
-      <h2 className="mb-6 md:mb-10 font-headline text-3xl font-bold">New Arrivals</h2>
+      <div className="mb-6 md:mb-10 flex items-end justify-between gap-4">
+        <h2 className="font-headline text-3xl font-bold text-on-surface">New Arrivals</h2>
+        <Link href="/browse" className="text-sm font-semibold text-secondary hover:text-primary transition">Browse all</Link>
+      </div>
 
       <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
         {site.arrivals.map((book) => (
           <Link href="/browse" key={book.title} className="group">
-            <div className="relative mb-4 aspect-3/4 overflow-hidden rounded-xl shadow-xl">
+            <div className="relative mb-4 aspect-3/4 overflow-hidden rounded-2xl border border-white/8 bg-surface shadow-2xl shadow-black/30">
               <Image
                 src={book.image}
                 alt={book.title}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute right-3 top-3 rounded bg-surfaceContainer/90 px-2 py-1 text-xs font-bold text-primary backdrop-blur-md">
+              <div className="absolute right-3 top-3 rounded-full bg-primary/15 px-2 py-1 text-xs font-bold text-primary backdrop-blur-md border border-primary/20">
                 NEW
               </div>
             </div>
 
             <div className="space-y-1">
-              <h3 className="truncate font-headline text-lg font-bold transition-colors group-hover:text-primary">
+              <h3 className="truncate font-headline text-lg font-bold text-on-surface transition-colors group-hover:text-primary">
                 {book.title}
               </h3>
               <p className="text-sm text-on-surface-variant">{book.author}</p>
