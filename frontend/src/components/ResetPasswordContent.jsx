@@ -73,7 +73,7 @@ export default function ResetPasswordContent() {
           Enter your new password below to reset your account password.
         </p>
 
-        <div className="glass-card p-6 rounded-3xl border border-white/8 shadow-2xl shadow-black/20">
+        <div className="glass-card p-6 rounded-3xl border border-white/60 shadow-2xl shadow-black/10">
           {success ? (
             <div className="text-center text-on-surface">
               <p className="mb-4">✅ Password has been reset successfully!</p>
