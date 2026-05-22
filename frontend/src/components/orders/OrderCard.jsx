@@ -3,7 +3,7 @@ import OrderStackImage from "./OrderStackImage";
 
 export default function OrderCard({ type, status }) {
   return (
-    <div className="rounded-2xl border border-white/5 bg-surface-container/40 backdrop-blur-lg p-4 sm:p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8">
+    <div className="rounded-3xl border border-white/8 glass-card p-4 sm:p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 shadow-2xl shadow-black/20">
 
       {/* Image */}
       <div className="w-full md:w-auto flex justify-center md:justify-start">
@@ -40,8 +40,8 @@ export default function OrderCard({ type, status }) {
           <div
             className={`text-[10px] sm:text-xs px-3 py-1 rounded-full border w-fit ${
               status === "completed"
-                ? "text-primary border-primary"
-                : "text-gray-400 border-gray-400"
+                ? "text-secondary border-secondary/40 bg-secondary/10"
+                : "text-on-surface-variant border-border/70 bg-white/5"
             }`}
           >
             {status}
@@ -54,18 +54,18 @@ export default function OrderCard({ type, status }) {
         </p>
 
         {/* Price */}
-        <p className="text-primary font-bold text-base sm:text-lg mb-5">
+        <p className="text-secondary font-bold text-base sm:text-lg mb-5">
           ₹124.50
         </p>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
 
-          <button className="w-full sm:w-auto bg-primary text-on-primary px-5 py-2.5 rounded-md text-sm font-semibold active:scale-95 transition">
+          <button className="w-full sm:w-auto btn btn-primary px-5 py-2.5 text-sm active:scale-95 transition">
             Download
           </button>
 
-          <button className="w-full sm:w-auto border border-primary px-5 py-2.5 rounded-md text-primary text-sm font-semibold hover:bg-primary hover:text-on-primary transition">
+          <button className="w-full sm:w-auto btn btn-ghost px-5 py-2.5 text-sm">
             View Details
           </button>
 
