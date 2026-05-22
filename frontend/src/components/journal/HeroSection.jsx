@@ -15,7 +15,7 @@ export default function HeroSection() {
 
         <div className="absolute inset-y-0 left-0 flex flex-col justify-center px-8 md:px-16 max-w-2xl">
           <span className="text-primary text-xs uppercase tracking-widest mb-3">
-            E_BOOK_STORE Journal
+            BrainHub Journal
           </span>
 
           <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6">
