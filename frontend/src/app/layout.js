@@ -16,7 +16,7 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: "e-book-store",
+  title: "BrainHub",
   description: "Modern e-book store UI",
 };
 
