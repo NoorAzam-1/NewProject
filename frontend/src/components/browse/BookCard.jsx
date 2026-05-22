@@ -102,10 +102,10 @@ export default function BookCard({ book }) {
 
 
   return (
-    <article className="group relative flex flex-col">
+    <article className="group relative flex h-full flex-col pb-4 sm:pb-6">
       <Link
         href={`/browse/books/${_id}`}
-        className="relative aspect-3/4 overflow-hidden rounded-2xl bg-surface shadow-2xl shadow-black/10 transition duration-300 group-hover:-translate-y-2 border border-white/60"
+        className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-surface shadow-2xl shadow-black/10 transition duration-300 group-hover:-translate-y-2 border border-white/60"
       >
         <Image
           src={coverImage}
@@ -140,25 +140,23 @@ export default function BookCard({ book }) {
         </div>
       </div>
 
-      <div className="absolute bottom-32 sm:bottom-28 md:bottom-32 xl:bottom-26 left-0 w-full md:px-2 transition group-hover:-translate-y-4">
-        <div className="flex items-center gap-1 sm:gap-2 px-1 sm:px-2">
-          <button
-            onClick={handleCart}
-            disabled={loadingId === _id}
-            className="btn btn-primary flex-1 py-2 text-[12px] sm:text-sm cursor-pointer"
-          >
-            {loadingId === _id ? "Adding..." : "Add to Cart"}
-          </button>
+      <div className="mt-4 flex items-center gap-2 sm:gap-3">
+        <button
+          onClick={handleCart}
+          disabled={loadingId === _id}
+          className="btn btn-primary flex-1 py-2 text-[12px] sm:text-sm cursor-pointer"
+        >
+          {loadingId === _id ? "Adding..." : "Add to Cart"}
+        </button>
 
-          <button
-            onClick={handleWishlist}
-            className={`w-10 h-10 text-xl rounded-full glass-card cursor-pointer ${
-              animate ? "scale-125" : ""
-            } ${isInWishlist ? "text-pink-400" : "text-on-surface-variant"}`}
-          >
-            {isInWishlist ? "❤️" : "🤍"}
-          </button>
-        </div>
+        <button
+          onClick={handleWishlist}
+          className={`w-10 h-10 text-xl rounded-full glass-card cursor-pointer transition-transform ${
+            animate ? "scale-125" : ""
+          } ${isInWishlist ? "text-pink-400" : "text-on-surface-variant"}`}
+        >
+          {isInWishlist ? "❤️" : "🤍"}
+        </button>
       </div>
 
       {toast && (
