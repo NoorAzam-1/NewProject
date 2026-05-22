@@ -121,7 +121,7 @@ export default function AddBook() {
       <form onSubmit={handleSubmit} className="space-y-5">
         {/* HEADER */}
         <div>
-          <h3 className="text-sm font-bold text-primary uppercase tracking-wider">
+          <h3 className="text-sm font-bold text-secondary uppercase tracking-wider">
             Add New E-Book
           </h3>
           <p className="text-xs text-on-surface-variant">
@@ -139,7 +139,7 @@ export default function AddBook() {
                 width={100}
                 height={100}
                 alt={`preview-${i}`}
-                className="w-24 h-32 object-cover rounded-md border"
+                className="w-24 h-32 object-cover rounded-2xl border border-border/60 shadow-sm"
               />
             ))}
           </div>
@@ -246,7 +246,7 @@ export default function AddBook() {
           </div>
         </div>
 
-        <div className="flex justify-between items-center bg-surface-container-lowest p-3 rounded-lg text-sm">
+        <div className="flex justify-between items-center glass-card p-3 rounded-2xl text-sm border border-white/60">
           <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="checkbox"
@@ -274,7 +274,7 @@ export default function AddBook() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-linear-to-r from-primary to-primary-container text-black font-bold py-3 rounded-lg hover:scale-[1.02] active:scale-[0.98] transition cursor-pointer disabled:opacity-50"
+          className="btn btn-primary w-full font-bold py-3 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition cursor-pointer disabled:opacity-50"
         >
           {loading ? "Adding..." : "Add E-Book"}
         </button>
