@@ -13,8 +13,8 @@ export default function OrderSummary() {
     }
   }, []);
 
-  if (items.length === 0) return <p className="p-10 text-center">Please add book to cart</p>;
-  if (!items.length) return <p className="p-10 text-center">Loading...</p>;
+  if (items.length === 0) return <p className="p-10 text-center text-on-surface-variant">Please add book to cart</p>;
+  if (!items.length) return <p className="p-10 text-center text-on-surface-variant">Loading...</p>;
 
 
   const subtotal = items.reduce((acc, i) => acc + i.price * i.quantity, 0);
@@ -24,7 +24,7 @@ export default function OrderSummary() {
 
   return (
     <section className="mb-12">
-      <h2 className="text-xl font-bold uppercase mb-6">Order Summary</h2>
+      <h2 className="text-xl font-bold uppercase mb-6 text-on-surface">Order Summary</h2>
 
       <div className="space-y-6">
         {/* ITEMS */}
@@ -34,7 +34,7 @@ export default function OrderSummary() {
           return (
             <div
               key={productId}
-              className="bg-surface-container-low p-6 rounded-xl space-y-4"
+              className="glass-card p-6 rounded-3xl space-y-4 border border-white/8"
             >
               <div className="flex gap-4">
                 <Image
@@ -42,7 +42,7 @@ export default function OrderSummary() {
                   src={image || "/fallback.png"}
                   height={500}
                   width={300}
-                  className="w-20 h-28 object-cover rounded"
+                  className="w-20 h-28 object-cover rounded-2xl border border-white/10"
                 />
 
                 <div className="flex-1">
@@ -63,22 +63,22 @@ export default function OrderSummary() {
 
         {/* TOTAL SECTION */}
         <div className="border-t border-outline-variant pt-4 space-y-2">
-          <div className="flex justify-between">
+          <div className="flex justify-between text-on-surface-variant">
             <span>Subtotal</span>
-            <span>₹{subtotal.toFixed(2)}</span>
+            <span className="text-on-surface">₹{subtotal.toFixed(2)}</span>
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between text-on-surface-variant">
             <span>Shipping</span>
             <span className="text-primary">Free</span>
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between text-on-surface-variant">
             <span>Tax</span>
-            <span>₹{tax.toFixed(2)}</span>
+            <span className="text-on-surface">₹{tax.toFixed(2)}</span>
           </div>
 
-          <div className="flex justify-between font-bold text-lg mt-2">
+          <div className="flex justify-between font-bold text-lg mt-2 text-on-surface">
             <span>Total</span>
             <span className="text-primary">₹{total.toFixed(2)}</span>
           </div>
