@@ -46,15 +46,15 @@ export default function BookCard({ book }) {
     return (
       <div className="flex items-center">
         {[...Array(full)].map((_, i) => (
-          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+          <Star key={i} className="w-4 h-4 fill-primary text-primary" />
         ))}
 
         {hasHalf && (
-          <StarHalf className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+          <StarHalf className="w-4 h-4 fill-accent text-accent" />
         )}
 
         {[...Array(empty)].map((_, i) => (
-          <Star key={`e-${i}`} className="w-4 h-4 text-gray-300" />
+          <Star key={`e-${i}`} className="w-4 h-4 text-on-surface-variant/40" />
         ))}
       </div>
     );
@@ -105,7 +105,7 @@ export default function BookCard({ book }) {
     <article className="group relative flex flex-col">
       <Link
         href={`/browse/books/${_id}`}
-        className="relative aspect-3/4 overflow-hidden rounded-2xl bg-surface shadow-2xl shadow-black/30 transition duration-300 group-hover:-translate-y-2 border border-white/8"
+        className="relative aspect-3/4 overflow-hidden rounded-2xl bg-surface shadow-2xl shadow-black/10 transition duration-300 group-hover:-translate-y-2 border border-white/60"
       >
         <Image
           src={coverImage}
@@ -121,7 +121,7 @@ export default function BookCard({ book }) {
           </span>
         )}
 
-        <span className="absolute top-3 right-3 bg-black/50 text-white text-[10px] px-2 py-1 rounded-full backdrop-blur-md border border-white/10">
+        <span className="absolute top-3 right-3 bg-white/80 text-on-surface text-[10px] px-2 py-1 rounded-full backdrop-blur-md border border-border/40">
           {format}
         </span>
       </Link>
@@ -162,7 +162,7 @@ export default function BookCard({ book }) {
       </div>
 
       {toast && (
-        <div className="fixed bottom-6 right-6 bg-black text-white px-4 py-2 rounded-lg">
+        <div className="fixed bottom-6 right-6 glass-card text-on-surface px-4 py-2 rounded-xl border border-white/60">
           {toast}
         </div>
       )}
