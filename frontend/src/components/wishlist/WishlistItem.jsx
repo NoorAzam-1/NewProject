@@ -35,7 +35,7 @@ export default function WishlistItem({
 
   return (
     <>
-      <div className="group relative flex flex-col md:flex-row gap-6 p-4 rounded-3xl glass-card border border-white/60 hover:border-primary/20 transition shadow-2xl shadow-black/10">
+      <div className="group relative flex flex-col md:flex-row gap-5 sm:gap-6 p-4 rounded-3xl glass-card border border-white/60 hover:border-primary/20 transition shadow-2xl shadow-black/10">
         
         {/* Image */}
         <div className="relative w-full md:w-40 aspect-2/3 overflow-hidden rounded-2xl shadow-xl shrink-0 border border-white/60">
@@ -51,7 +51,7 @@ export default function WishlistItem({
         <div className="flex flex-col justify-between flex-1 py-2">
           
           {/* Top */}
-          <div className="flex justify-between items-start">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
             <div>
               <h3 className="text-xl md:text-2xl font-headline font-bold text-on-surface group-hover:text-primary">
                 {title}
@@ -83,7 +83,7 @@ export default function WishlistItem({
             <button
               onClick={handleMoveToCart}
               disabled={loading}
-              className="btn btn-primary px-6 py-3 font-bold flex items-center gap-2 hover:scale-[1.03] active:scale-95 transition cursor-pointer"
+              className="btn btn-primary w-full sm:w-auto px-6 py-3 font-bold flex items-center gap-2 hover:scale-[1.03] active:scale-95 transition cursor-pointer"
             >
               {loading ? "Moving..." : "🛒 Move to Cart"}
             </button>
