@@ -1,11 +1,8 @@
-"use client";
-
 import Image from "next/image";
 
 export default function CartItem({ item, updateQty, removeItem }) {
   return (
     <div className="group flex flex-col md:flex-row gap-4 sm:gap-6 pb-8 sm:pb-10 border-b border-border/30">
-      {/* Image */}
       <div className="relative w-full md:w-40 h-56 sm:h-60 overflow-hidden shadow-xl rounded-2xl transition-transform duration-500 group-hover:-translate-y-4">
         <Image
           src={item.image}
@@ -16,7 +13,6 @@ export default function CartItem({ item, updateQty, removeItem }) {
         />
       </div>
 
-      {/* Content */}
       <div key={item.productId} className="flex flex-col justify-between flex-1 gap-4">
         <div className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:justify-between gap-3">
@@ -39,7 +35,6 @@ export default function CartItem({ item, updateQty, removeItem }) {
           </div>
         </div>
 
-        {/* Actions */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div className="flex items-center justify-center bg-surface-light rounded-xl p-2 border border-white/60 w-fit">
             <button
