@@ -3,9 +3,7 @@
 export default function PaymentMethod({ data, setData, errors }) {
   return (
     <section className="mb-12">
-      {/* SELECT METHOD */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-        {/* CARD */}
         <div
           onClick={() => setData({ ...data, method: "card" })}
           className={`p-4 rounded-2xl border cursor-pointer transition flex items-center justify-between glass-card ${
@@ -18,7 +16,6 @@ export default function PaymentMethod({ data, setData, errors }) {
           {data.method === "card" && <span className="text-primary">✔</span>}
         </div>
 
-        {/* UPI */}
         <div
           onClick={() => setData({ ...data, method: "upi" })}
           className={`p-4 rounded-2xl border cursor-pointer transition flex items-center justify-between glass-card ${
@@ -32,10 +29,8 @@ export default function PaymentMethod({ data, setData, errors }) {
         </div>
       </div>
 
-      {/* 💳 CARD FORM */}
       {data.method === "card" && (
         <div className="glass-card p-4 sm:p-5 rounded-2xl border border-border/70 space-y-4">
-          {/* CARD PREVIEW */}
           <div className="p-4 rounded-2xl bg-linear-to-r from-primary to-secondary text-white shadow-lg shadow-primary/20">
             <p className="text-sm opacity-80">Card Number</p>
             <p className="text-base sm:text-lg font-bold tracking-widest">
@@ -48,9 +43,7 @@ export default function PaymentMethod({ data, setData, errors }) {
             </div>
           </div>
 
-          {/* INPUTS */}
           <div className="space-y-4">
-            {/* CARD NUMBER */}
             <div>
               <input
                 placeholder="Card Number"
@@ -65,7 +58,6 @@ export default function PaymentMethod({ data, setData, errors }) {
               )}
             </div>
 
-            {/* NAME */}
             <div>
               <input
                 placeholder="Card Holder Name"
@@ -75,7 +67,6 @@ export default function PaymentMethod({ data, setData, errors }) {
               />
             </div>
 
-            {/* EXPIRY + CVV */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <input
@@ -105,7 +96,6 @@ export default function PaymentMethod({ data, setData, errors }) {
         </div>
       )}
 
-      {/* 📱 UPI FORM */}
       {data.method === "upi" && (
         <div className="glass-card p-4 sm:p-5 rounded-2xl border border-border/70 space-y-4">
           <div className="text-sm text-on-surface-variant">
@@ -124,7 +114,6 @@ export default function PaymentMethod({ data, setData, errors }) {
             )}
           </div>
 
-          {/* FAKE APPS */}
           <div className="flex flex-wrap gap-3 text-xs text-on-surface-variant">
             <span className="px-3 py-1 rounded-full bg-surface-light border border-white/60">
               GPay
