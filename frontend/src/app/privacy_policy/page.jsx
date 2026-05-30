@@ -7,7 +7,6 @@ import {
   UserSearch,
   RefreshCw,
   Shield,
-  ArrowRight,
 } from "lucide-react";
 
 export default function PrivacyPolicy() {
