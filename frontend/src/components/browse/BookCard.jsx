@@ -27,7 +27,6 @@ export default function BookCard({ book }) {
     averageRating,
   } = book;
 
-  // SAME RANDOM LOGIC (IMPORTANT)
   const displayRating = useMemo(() => {
     if (averageRating && averageRating > 0) return averageRating;
 
