@@ -50,11 +50,13 @@ export default function AuthGuard({ children }) {
     }
 
     // only here we allow render
-    setLoading(false);
+    const timer = setTimeout(() => setLoading(false), 0);
+
+    return () => clearTimeout(timer);
   }, [pathname, router]);
 
 if (loading) {
-  return <div className="h-screen flex items-center justify-center">Loading...</div>;
+  return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
 }
   return children;
 }
