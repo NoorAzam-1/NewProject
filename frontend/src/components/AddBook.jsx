@@ -246,7 +246,7 @@ export default function AddBook() {
           </div>
         </div>
 
-        <div className="flex justify-between items-center glass-card p-3 rounded-2xl text-sm border border-white/60">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 glass-card p-3 rounded-2xl text-sm border border-white/60">
           <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="checkbox"
