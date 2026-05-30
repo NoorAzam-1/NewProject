@@ -16,7 +16,6 @@ export default function AuthGuard({ children }) {
     const protectedRoutes = ["/profile", "/orders", "/cart", "/wishlist", "/checkout"];
     const authRoutes = ["/login", "/register"];
 
-    // Protected routes
     if (protectedRoutes.some((r) => pathname.startsWith(r))) {
       if (!token) {
         router.replace("/login");
@@ -24,7 +23,6 @@ export default function AuthGuard({ children }) {
       }
     }
 
-    // Admin route
     if (pathname.startsWith("/admin")) {
       if (!token) {
         router.replace("/login");
@@ -37,7 +35,6 @@ export default function AuthGuard({ children }) {
       }
     }
 
-    // Login/Register redirect
     if (authRoutes.some((r) => pathname.startsWith(r))) {
       if (token) {
         if (role === "admin") {
@@ -49,7 +46,6 @@ export default function AuthGuard({ children }) {
       }
     }
 
-    // only here we allow render
     const timer = setTimeout(() => setLoading(false), 0);
 
     return () => clearTimeout(timer);
