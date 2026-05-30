@@ -232,7 +232,7 @@ export default function AdminPage() {
             return (
               <div
                 key={p._id}
-                className="relative glass-card flex flex-col md:flex-row gap-3 mdLgap-6 p-3 md:p-5 rounded-3xl border border-white/60 hover:scale-[1.01] transition"
+                className="relative glass-card flex flex-col md:flex-row gap-3 md:gap-6 p-3 md:p-5 rounded-3xl border border-white/60 hover:scale-[1.01] transition"
               >
                 {/* BACKGROUND ICON */}
                 <Book
@@ -273,7 +273,7 @@ export default function AdminPage() {
                 {/* DELETE */}
                 <button
                   onClick={() => handleDeleteProduct(p._id)}
-                  className="h-fit px-4 py-2 bg-error text-white rounded-full flex items-center gap-2 cursor-pointer active:scale-95 hover:opacity-80 transition"
+                  className="h-fit w-full md:w-auto justify-center px-4 py-2 bg-error text-white rounded-full flex items-center gap-2 cursor-pointer active:scale-95 hover:opacity-80 transition"
                 >
                   <Trash2 size={16} /> Delete
                 </button>
