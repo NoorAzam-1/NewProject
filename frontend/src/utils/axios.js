@@ -51,12 +51,9 @@ axiosInstance.getProfile = () => axiosInstance.get("/api/user/profile");
 axiosInstance.adminLogin = (data) =>
   axiosInstance.post("/api/user/admin-login", data);
 
-// ADMIN USERS
 axiosInstance.getAllUsers = () => axiosInstance.get("/api/user/users");
-
 axiosInstance.deleteUser = (id) =>
   axiosInstance.delete(`/api/user/users/${id}`);
-
 axiosInstance.getSellers = () => axiosInstance.get("/api/user/users/sellers");
 
 //feedback
