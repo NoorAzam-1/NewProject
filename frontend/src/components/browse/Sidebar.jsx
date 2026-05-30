@@ -29,7 +29,6 @@ export default function Sidebar({
 
   return (
     <>
-      {/* Overlay (mobile) */}
       {open && (
         <div
           onClick={() => setOpen(false)}
@@ -39,13 +38,11 @@ export default function Sidebar({
 
       <aside
         className={`w-[min(84vw,20rem)] sm:w-80 md:w-72 lg:w-80 p-4 sm:p-5 space-y-6 glass-card z-40
-        fixed top-0 left-0 h-full overflow-y-auto transform transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:sticky md:top-24 md:h-fit`}>
-        {/* CLOSE BUTTON */}
+        fixed top-0 left-0 h-full overflow-y-auto transform transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:sticky md:top-0 md:h-fit`}>
         <button onClick={() => setOpen(false)} className="md:hidden text-primary">
           <X />
         </button>
 
-        {/* 🔍 SEARCH */}
         <div className="relative">
           <Search className="absolute top-1/2 ml-1 -translate-y-1/2 text-on-surface-variant" />
           <input
@@ -56,7 +53,6 @@ export default function Sidebar({
           />
         </div>
 
-        {/* 📖 FORMAT */}
         <section>
           <h3 className="text-[10px] sm:text-xs md:text-[11px] font-headline text-primary tracking-[0.1rem] uppercase mb-3">
             Format
@@ -80,7 +76,6 @@ export default function Sidebar({
           </div>
         </section>
 
-        {/* 🎯 GENRES */}
         <section>
           <h3 className="text-[10px] sm:text-xs md:text-[11px] font-headline text-primary tracking-[0.1rem] uppercase mb-3">
             Categories
@@ -102,7 +97,6 @@ export default function Sidebar({
           </div>
         </section>
 
-        {/* 💰 PRICE */}
         <section>
           <div className="flex justify-between text-[10px] sm:text-xs mb-3 text-on-surface-variant">
             <h3 className="text-secondary uppercase tracking-[0.1rem]">
@@ -123,23 +117,6 @@ export default function Sidebar({
             onChange={(e) => setMaxPrice(Number(e.target.value))}
             className="w-full accent-primary"
           />
-        </section>
-
-        {/* ⭐ RATING */}
-        <section>
-          <h3 className="text-secondary text-[10px] sm:text-xs uppercase mb-3">
-            Average Rating
-          </h3>
-
-          <label className="flex items-center gap-2 text-xs sm:text-sm cursor-pointer">
-            <input type="checkbox" />
-            ⭐⭐⭐⭐⭐ 4.5+
-          </label>
-
-          <label className="flex items-center gap-2 text-xs sm:text-sm mt-2 cursor-pointer">
-            <input type="checkbox" />
-            ⭐⭐⭐⭐ 4.0+
-          </label>
         </section>
       </aside>
     </>
