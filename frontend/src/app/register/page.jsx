@@ -65,7 +65,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="text-on-surface flex items-center justify-center min-h-screen px-2 py-3 md:py-10 relative overflow-hidden">
+    <div className="text-on-surface flex items-center justify-center min-h-screen px-4 py-8 md:py-10 relative overflow-hidden">
       <Toaster position="top-right" reverseOrder={false} />
       <div className="w-full max-w-md z-10">
         {/* HEADING */}
@@ -179,7 +179,7 @@ export default function RegisterPage() {
             {/* BUTTON */}
             <button
               type="submit"
-              className="btn btn-primary w-full py-3 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition cursor-pointer"
+              className="btn btn-primary w-full py-3 rounded-2xl flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition cursor-pointer"
             >
               Create Account <ArrowRight size={18} />
             </button>
