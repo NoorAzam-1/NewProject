@@ -11,23 +11,23 @@ export default function HeroSection() {
             Frictionless Access
           </span>
 
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Zero Wait. <br />
             <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Instant Delivery.</span>
           </h2>
 
-          <p className="text-on-surface-variant text-lg mb-8 max-w-xl">
+          <p className="text-on-surface-variant text-base sm:text-lg mb-8 max-w-xl">
             At BrainHub, shipping isn&apos;t measured in days—it&apos;s
             measured in milliseconds. Your next literary journey begins the
             moment you click &apos;Purchase&apos;.
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <button className="btn btn-primary flex items-center gap-2 px-5 py-3">
+            <button className="btn btn-primary w-full sm:w-auto flex items-center gap-2 px-5 py-3">
               ⚡ Instant Download
             </button>
 
-            <button className="btn btn-ghost flex items-center gap-2 px-5 py-3">
+            <button className="btn btn-ghost w-full sm:w-auto flex items-center gap-2 px-5 py-3">
               ☁️ Cloud Sync
             </button>
           </div>
