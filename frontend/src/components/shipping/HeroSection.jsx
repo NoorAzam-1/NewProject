@@ -5,7 +5,6 @@ export default function HeroSection() {
     <section className="mb-4 md:mb-10">
       <div className="relative overflow-hidden rounded-3xl glass-card p-6 md:p-16 border border-white/60 shadow-2xl shadow-black/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.14),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.1),transparent_28%)]" />
-        {/* LEFT CONTENT */}
         <div className="relative z-10 max-w-2xl">
           <span className="text-secondary text-sm md:text-md font-bold tracking-[0.3rem] uppercase mb-4 block">
             Frictionless Access
