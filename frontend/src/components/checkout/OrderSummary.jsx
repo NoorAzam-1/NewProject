@@ -1,17 +1,18 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function OrderSummary() {
-  const [items, setItems] = useState([]);
+  const [items] = useState(() => {
+    if (typeof window === "undefined") return [];
 
-  useEffect(() => {
-    const stored = localStorage.getItem("checkoutData");
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      setItems(parsed);
+    try {
+      const stored = localStorage.getItem("checkoutData");
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
     }
-  }, []);
+  });
 
   if (items.length === 0) return <p className="p-10 text-center text-on-surface-variant">Please add book to cart</p>;
   if (!items.length) return <p className="p-10 text-center text-on-surface-variant">Loading...</p>;
@@ -36,13 +37,13 @@ export default function OrderSummary() {
               key={productId}
               className="glass-card p-6 rounded-3xl space-y-4 border border-white/60"
             >
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Image
                   alt="image"
                   src={image || "/fallback.png"}
                   height={500}
                   width={300}
-                  className="w-20 h-28 object-cover rounded-2xl border border-white/60"
+                  className="w-full sm:w-20 h-56 sm:h-28 object-cover rounded-2xl border border-white/60"
                 />
 
                 <div className="flex-1">
