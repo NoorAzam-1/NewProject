@@ -83,6 +83,14 @@ export default function BookDetailPage() {
     return { bookDesc, authorDesc };
   }, [book]);
 
+  const increasePercent = useMemo(() => {
+    const hash = book?._id
+      ?.split("")
+      .reduce((acc, char) => acc + char.charCodeAt(0), 0);
+
+    return ((hash || 0) % 36) + 5;
+  }, [book]);
+
   const handleBuyNow = () => {
     const item = {
       productId: book._id,
@@ -98,7 +106,6 @@ export default function BookDetailPage() {
   if (loading) return <p className="p-10">Loading...</p>;
   if (!book) return <p className="p-10">Product not found</p>;
 
-  const increasePercent = Math.floor(Math.random() * 36) + 5;
   const fakePrice = Math.round(
     book.price + (book.price * increasePercent) / 100,
   );
@@ -150,7 +157,7 @@ export default function BookDetailPage() {
             {/* PRICE */}
             <div className="glass-card p-6 rounded-3xl border border-white/60">
               <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   {/* Real Price */}
                   <div className="text-3xl font-bold text-primary mt-1">
                     ₹{book.price}
@@ -179,7 +186,7 @@ export default function BookDetailPage() {
             </div>
 
             {/* DETAILS */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-sm">
               <div className="p-3 glass-card rounded-2xl border border-white/60">
                 <span className="text-primary">Format</span>
                 <p>{book.format}</p>
@@ -207,7 +214,7 @@ export default function BookDetailPage() {
           </div>
         </section>
 
-        <div className="flex flex-col gap-4 sm:flex-row  md:gap-4 py-4 md:py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-4 md:py-6">
           {/* ABOUT */}
           <section className="p-6 rounded-3xl glass-card border border-white/60">
             <h2 className="text-2xl font-bold text-on-surface mb-4">
@@ -224,7 +231,7 @@ export default function BookDetailPage() {
               Author Spotlight
             </h2>
 
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               <div className="min-w-8 min-h-8 w-16 h-16 rounded-full bg-gradient-futuristic flex items-center justify-center text-xl font-bold text-white shadow-lg shadow-primary/20">
                 {book.author?.charAt(0) || "A"}
               </div>
